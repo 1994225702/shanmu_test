@@ -1,94 +1,280 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
-int main()
-{
 
-	return 0;
-}
+#include <stdio.h>
+  
+
 //int main()
-//{编写程序，由键盘输入一个百分制的整数成绩，要求输出对应的成绩等级。90分以上为A，80到89分为B，70到79分为C，60到69分为D，
-//              60分以下为E。成绩不在0到100之间时输出“error”
-//	int S;
-//	scanf("%d", &S);
-//	if (S >= 90 && S <= 100)
+//{//由键盘输入正数n（n<10），要求输出如下中间数字为n的2*n-1菱形图案
+//	int i, j, k,l,n;
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)//打印上半部分
 //	{
-//		printf("A");
-//	}
-//	else if (S >= 80 && S <= 89)
-//	{
-//		printf("B");
-//	}
-//	else if (S >= 70 && S <= 79)
-//	{
-//		printf("C");
-//	}
-//	else if (S >= 60 && S <= 69)
-//	{
-//		printf("D");
-//	}
-//	else if (S >= 0 && S <= 59)
-//	{
-//		printf("E");
-//	}
-//	else
-//		printf("error");
-//	return 0;
-//}
-//int main()
-//{编写程序，由键盘输入3个整数，输出其中最大的数
-//	int a, b, c;
-//	scanf("%d%d%d", &a, &b, &c);
-//	printf("%d", c > (a > b ? a : b) ? c : (a > b ? a : b));
-//	return 0;
-//}
-//int main()
-//{编写程序，输入一个数字字符，输出其前一个和后一个的数字字符，如果输入的是0前一个输出
-//          “first”，9后一个则输出“last”，输入的不是数学字符，输出“error”
-//	int ch;
-//	ch = getchar();//int getchar(void)---return value-int(type)-ASCII码值
-//	if (ch >= '0' && ch <= '9')
-//	{
-//		{if (ch == '0')
-//			printf("%s %c", "first",ch+1);
-//		else if (ch == 9)
-//			printf("%c %s", ch-1, "last");
-//		else
-//			printf("%c %c", ch - 1, ch + 1);
-//		}
-//	}
-//	else
-//		printf("error");
-//	return 0;
-//}
-//int main()
-//{//编写程序，输入三个整数变量hour（小时）、minute（分钟）、second（秒）代表一个时间，
-//	//输出该时间20秒以后的时间。
-//
-//	int hour, minute, second;
-//	scanf("%d:%d:%d", &hour, &minute, &second);
-//	if (hour >= 24 || minute >= 60 || second >= 60)
-//	{//判断输入时间的合法性
-//		return 0;
-//	}
-//	else 
-//	{	
-//		second += 20;
-//		if (second >= 60)
+//		for (j = n - 1-i; j > 0; j--)
 //		{
-//			second -= 60;
-//			minute += 1;
-//			if (minute >= 60)
-//			{
-//				minute -= 60;
-//				hour += 1;
-//				if (hour >= 24)
-//				{
-//					hour -= 24;
-//				}
-//			}
+//			printf(" ");//打印空格
 //		}
+//		for (k = 1;k<=i+1;k++)
+//		{
+//			printf("%d", k);//打印前半段digit
+//		}
+//		for (l = i;l>0;l--)
+//		{
+//			printf("%d", l);//打印后半段digit
+//		}
+//		printf("\n");//每行换行
 //	}
-//	printf("%02d:%02d:%02d", hour, minute, second);
+//	for (i = n - 1; i > 0; i--)//打印下半部分
+//	{
+//		for (j = 0; j < n - i; j++)
+//		{
+//			printf(" ");//打印空格
+//		}
+//		for (k = 1; k <= i; k++)//打印前半段digit
+//		{
+//			printf("%d", k);
+//		}
+//		for (l = i-1; l > 0; l--)//打印后半段digit
+//		{
+//			printf("%d", l);
+//		}
+//		printf("\n");//每行换行
+//	}
 //	return 0;
 //}
+
+
+//int main()
+//{//由键盘输入一个3＊4的矩阵，要求输出它的转置矩阵
+//	int i,j,a[3][4],b[4][3];
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			scanf("%d", &a[i][j]);//输入矩阵
+//		}
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			b[j][i] = a[i][j];//转置矩阵
+//		}
+//	}
+//	for (i = 0; i < 4; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%d ", b[i][j]);//输出矩阵
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//qsort --可以对任意排序
+
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int(*p)[10] = &arr;//取出数组的地址
+//
+//	int (*pf)(int, int);//函数指针
+//	int (*pfArr[4])(int, int);//pfArr是一个数组-函数指针的数组
+//	//ppfArr是一个指向[函数指针数组]的指针
+//	int (*(*ppfArr)[4])(int, int) = &pfArr;
+//	//ppfArr是一个数组指针，指针指向的数组有4个元素
+//	//每个元素的类型是一个函数指针 int(*)(int,int)
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+//计算器
+//void menu()
+//{
+//	printf("**************************\n");
+//	printf("** 1.Add          2.Sub **\n");
+//	printf("** 3.Mul          4.Div **\n");
+//	printf("** 5.Xor          0.Exit**\n");
+//	printf("**************************\n");
+//}
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//int Sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int Mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int Div(int x, int y)
+//{
+//	return x / y;
+//}
+//int Xor(int x, int y)
+//{
+//	return x ^ y;
+//}
+//void Calc(int (*pf)(int, int))
+//{
+//	int x, y;
+//	printf("请输入操作数:");
+//	scanf("%d%d", &x, &y);
+//	printf("%d\n", pf(x, y));
+//}
+//int main()
+//{//回调函数---调用函数
+//	int input;
+//	do {
+//		menu();
+//		printf("请选择算法:");
+//		scanf("%d", &input);
+//			
+//		switch (input)
+//		{
+//		case 1:
+//			Calc(Add);
+//			break;
+//		case 2:
+//			Calc(Sub);
+//			break;
+//		case 3:
+//			Calc(Mul);
+//			break;
+//		case 4:
+//			Calc(Div);
+//			break;
+//		case 5:
+//			Calc(Xor);
+//			break;
+//		case 0:
+//			printf("退出\n");
+//			break;
+//		default:
+//			printf("选择错误\n");
+//			break;
+//		}
+//
+//	} while (input);
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int input, x, y;//函数指针数组的应用--转移表
+//	int (*pfArr[])(int, int) = { 0,Add,Sub,Mul,Div,Xor };
+//	do {
+//		menu();
+//		printf("请选择算法:");
+//		scanf("%d", &input);
+//		if (input > 0 && input <= 5)
+//		{
+//			printf("请输入操作数:");
+//			scanf("%d%d", &x, &y);
+//			int ret = pfArr[input](x, y);
+//			printf("%d\n", ret);
+//		}
+//		else if (input == 0)
+//		{
+//			printf("退出\n");
+//		}
+//		else
+//			printf("弄啥嘞\n");
+//	} while (input);
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int input, x, y;
+//	do {
+//		menu();
+//		printf("请选择算法:");
+//		scanf("%d", &input);
+//		if(input!=0)
+//		{
+//			printf("请输入操作数:");
+//			scanf("%d%d", &x, &y);
+//		}
+//		switch (input)
+//		{
+//		case 1:
+//			printf("%d\n",Add(x,y));
+//			break;
+//		case 2:
+//			printf("%d\n", Sub(x, y));
+//			break; 
+//		case 3:
+//			printf("%d\n", Mul(x, y));
+//			break;
+//		case 4:
+//			printf("%d\n", Div(x, y));
+//			break;
+//		case 5:
+//			printf("%d\n", Xor(x, y));
+//			break;
+//		case 0:
+//			printf("退出\n");
+//			break;
+//		default:
+//			printf("选择错误\n");
+//			break;
+//		}
+//
+//	} while (input);
+//
+//	return 0;
+//}
+
+//char* my_strcpy(char* dest, const char* src)
+//{
+//
+//}
+//int main()
+//{
+//	char* (*pf)(char*, const char*) = my_strcpy;
+//	char* (*pfArr[4])(char*, const char*) = { my_strcpy,my_strcpy,my_strcpy ,my_strcpy };
+//	return 0;
+//}
+
+
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//int Sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int Mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int Div(int x, int y)
+//{
+//	return x / y;
+//}
+//int main()
+//{
+//	//指针数组
+//	int* arr[] = { 0 };
+//	//函数指针数组
+//	int (*pa)(int, int) = Add;
+//	int (*parr[4])(int, int) = { Add,Sub,Mul,Div };
+//	int i;
+//	for (i = 0; i < 4; i++)
+//	{
+//		printf("%d ", parr[i](2, 3));
+//	}
+//	return 0;
+//}
+
 
