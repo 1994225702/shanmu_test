@@ -3,206 +3,206 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <math.h>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//#define LEN sizeof(struct DATA)
-//
-//struct DATA
+//int main()
 //{
-//    long num;
-//    struct DATA* next;
-//};
-//
-//struct DATA* create(int n)
+//	char word[10000][11] = { 0 };
+//	FILE* fp;
+//	int i,n = 0;
+//	if (fp = fopen("case1.txt", "r") == NULL)
+//		return 0;
+//	while (fgets(word[n], 11, fp) != NULL)
+//	{
+//		n++;
+//	}
+//	fclose(fp);
+//	for(i=0;i<n;i++)
+//		for (int j = 0; j < n - i; j++)
+//		{
+//			if (strcmp(word[j], word[j + 1]) > 0)
+//			{
+//				char tmp[11];
+//				strcpy(tmp, word[j]);
+//				strcpy(word[j], word[j + 1]);
+//				strcpy(word[j + 1], tmp);
+//			}
+//		}
+//	n = 0;
+//	if (fp = fopen("answer.txt", "w") == NULL)
+//		return 0;
+//	while (fputs(word[n], fp) != EOF)
+//	{
+//		n++;
+//	}
+//	fclose(fp);
+//	return 0;
+//}
+//void move(int* arr, int sz)
 //{
-//    struct DATA* head = NULL, * p1 = NULL, * p2 = NULL;
-//    int i;
-//    for (i = 1; i <= n; i++)
-//    {
-//        p1 = (struct DATA*)malloc(LEN);
-//        scanf("%ld", &p1->num);
-//        p1->next = NULL;
-//        if (i == 1) head = p1;
-//        else p2->next = p1;
-//        p2 = p1;
-//    }
-//    return(head);
+//	int right = sz-1,left = 0;
+//	while(left<right)
+//	{
+//		//从左边找偶数
+//		while (left < right && arr[left] % 2 == 1)
+//		{
+//			left++;
+//		}
+//		//从右边找奇数
+//		while (left < right && arr[right] % 2 == 0)
+//		{
+//			right--;
+//		}
+//		if (left < right)
+//		{
+//			int tmp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = tmp;
+//		}
+//	}
 //}
 //
-//struct DATA* merge(struct DATA* head, struct DATA* head2)
+//void print(int* arr, int sz)
 //{
-//    /// <summary>
-//    /// 标程
-//    /// </summary>
-//    struct DATA* p;
-//    p = head;
-//    while (p->next != NULL) p = p->next;
-//    p->next = head2;
-//    return head;
-
-    /*if (head == NULL) return head2;
-    struct DATA* p = head; 
-    while (p->next != NULL)
-    {
-        p = p->next;
-    }
-    p->next = head2;
-    return head;*/
-}
-
-//struct DATA* insert(struct DATA* head, struct DATA* d)
-//{
-    /*if (head == NULL) return d;
-    else if (head->num >= d->num)   
-    {
-        d->next = head;
-        return d;
-    }
-    else 
-    {
-        struct DATA * p = head,*pre;
-        while (p->next != NULL)
-        {
-            pre = p;
-            p = p->next;
-            if (p->num > d->num)
-            {
-                d->next = pre->next;
-                pre->next = d;
-                break;
-            }   
-        }
-        if (p->next == NULL)
-        {
-            d->next = p->next;
-            p->next = d;
-        }
-        
-    }*/
-
-
-
-    /*struct DATA* p0, * p1, * p2=NULL;
-    p1 = head;  p0 = d;
-    if (head == NULL)
-    {
-        head = p0;
-    }
-    else
-    {
-        while ((p0->num > p1->num) && (p1->next != NULL))
-        {
-            p2 = p1;     p1 = p1->next;
-        }
-        if (p0->num <= p1->num)
-        {
-            if (head == p1) head = p0;
-            else p2->next = p0;
-            p0->next = p1;
-        }
-        else { p1->next = p0; }
-    }
-    return head;*/
-
-    //标程
-    /*struct DATA* p0, * p1, * p2;
-    p1 = head;
-    p0 = d;
-    if (head == NULL) { head = p0; p0->next = NULL; }
-    else
-    {
-        while ((p0->num > p1->num) && (p1->next != NULL))
-        {
-            p2 = p1;
-            p1 = p1->next;
-        }
-        if (p0->num <= p1->num)
-        {
-            if (head == p1)head = p0;
-            else p2->next = p0;
-            p0->next = p1;
-        }
-        else { p1->next = p0; p0->next = NULL; }
-    }
-}
-
-struct DATA* sort(struct DATA* head)
-{
-    /// <summary>
-    /// 标程
-    /// </summary>
-    struct DATA* p1, * p2;
-    p2 = head; p1 = head;
-    p2 = p2->next;
-    p1->next = NULL;
-    p1 = p2;
-    while (p2->next != NULL)
-    {
-        p2 = p2->next;
-        p1->next = NULL;
-        head = insert(head, p1);
-        p1 = p2;
-    }
-    head = insert(head, p1);*/
-
-    /*struct DATA* p = head,*q = NULL,*head2 = NULL;
-    while (p != NULL)
-    {
-        q = p->next;
-        p->next = NULL;
-        head2 = insert(head2, p);
-        p = q;
-    }
-    head = head2;
-
-    return head;*/
-//}
-
-//void print(struct DATA* head)
-//{
-//    struct DATA* p;
-//    p = head;
-//    while (p != NULL)
-//    {
-//        printf("%ld", p->num);
-//        p = p->next;
-//        printf("\n");
-//    }
+//	int i;
+//	for (i = 0; i < sz ; i++)
+//		printf("%d ", arr[i]);
 //}
 //
-//main()
+//int main()
 //{
-//    struct DATA* head, * head2;
-//    int n;
-//    long del_num;
-//    scanf("%d", &n);
-//    head = create(n);
-//    scanf("%d", &n);
-//    head2 = create(n);
-//    head = merge(head, head2);
-//    head = sort(head);
-//    print(head);
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	move(arr, sz);
+//	print(arr, sz);
+//	return 0;
+//}
+// 
+// 
+// 
+////喝汽水问题---1R1瓶汽水，两个空瓶换1瓶汽水
+// 等价交换思想，1R买一瓶，其他0.5R买一瓶
+// 或者0.5R买一瓶，手里剩一瓶没得换
+//int main()
+//{
+//	int money, total,empty;
+//	scanf("%d", &money);
+// 
+// 
+//	///2
+// 
+// if(money==0)
+// 
+// 
+// 
+// 
+// 
+//	//买回来的汽水喝掉
+//	total = money;
+//	empty = money;
+//	//换回来的汽水
+//	while (empty>=2)
+//	{
+//		total += empty / 2;
+//		empty = empty % 2 + empty / 2;
+//	}
+//	printf("total=%d", total);
+//	return 0;
 //}
 
 
+
+
+//打印水仙花数
+//int main()
+//{//各位上的数字的n次方之和等于该数，该数是n位数
+//	int i, tmp;
+//	for (i = 1; i <= 100000; i++)
+//	{
+//		tmp = i;
+//		int sum = 0;
+//		int n = 1;
+//		while (tmp /= 10)
+//		{
+//			n++;
+//		}
+//		tmp = i;
+//		while (tmp)
+//		{
+//			sum += (int)pow(tmp % 10, n);
+//			tmp /= 10;
+//		}
+//		if (i == sum)
+//			printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+
+//int main()
+//{//a+aa+aaa+aaaa+aaaaa+...+n-a==?
+//	int i,a, n,ret =0,sum=0;
+//	scanf("%d%d", &a, &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = ret * 10 + a;
+//		sum += ret;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+////逆序函数
+//void reverse(char* str)
+//{
+//	assert(str);
+//	int len = strlen(str);
+//	char* left = str;
+//	char* right = str + len - 1;
+//
+//	while (left < right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	gets(arr);
+//	reverse(arr);
+//	printf("逆序后的的字符串：%s\n", arr);
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+//int main()
+//{
+//	char* c[] = { "ENTER","NEW","POINT","FIRST" }; //指针数组
+//	char** cp[] = { c + 3,c + 2,c + 1,c };		//二级指针数组
+//	char*** cpp = cp;							//三级指针
+//
+//	printf("%s\n", **++cpp);	//POINT				//cpp自增值已经改变
+//	printf("%s\n", *--*++cpp+3);	//ER			//cpp值再次改变
+//	printf("%s\n", *cpp[-2]+3);		//ST				//cpp值不变
+//	printf("%s\n", cpp[-1][-1]+1);  //EW
+//	return 0;
+//}
