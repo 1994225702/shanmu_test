@@ -1,16 +1,83 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
-
 #include <stdio.h>
-#include "math.h"
-#include <string.h>
+#include <stdlib.h>
+#include <malloc.h>
+
+//寄存器>cache-高速缓存>内存>硬盘
+
+//连续性好--效率高--方便内存释放
+//柔性数组--至少要有一个非柔性数组成员
+//struct S
+//{
+//	int n;
+//	int arr[];//未知大小-柔性数组成员-数组的大小是可以调整的
+//};
+//
+//int main()
+//{
+//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5 * sizeof(int));
+//	ps->n = 100;
+//
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		ps->arr[i] = i;//0 1 2 3 4
+//	}
+//	struct S* ptr = realloc(ps, 44);
+//	if (ptr != NULL)
+//	{
+//		ps = ptr;
+//	}
+//	for (i = 5; i < 10; i++)
+//	{
+//		ps->arr[i] = i;
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", ps->arr[i]);
+//	}
+//	return 0;
+//}
 
 
+
+//动态内存开辟---形式上更复杂---需要free多次才能清理干净---malloc多造成内存碎片
+struct S
+{
+	int n;
+	int* arr;
+};
 
 int main()
 {
+	struct S* ps = (struct S*)malloc(sizeof(struct S));
+	ps->arr = malloc(5 * sizeof(int));
 
+	int i;
+	for (i = 0; i < 5; i++)
+	{
+		ps->arr[i] = i;
+	}
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d ", ps->arr[i]);
+	}
+	//调整大小
+	int* ptr = realloc(ps->arr, 10 * sizeof(int));
+	if (ptr != NULL)
+	{
+		ps->arr = ptr;
+	}
+	for (i = 5; i < 10; i++)
+	{
+		ps->arr[i] = i;
+	}
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", ps->arr[i]);
+	}
 	return 0;
 }
 
@@ -26,164 +93,76 @@ int main()
 
 
 
-//小明对数字很在乎，如果抽签抽到一个幸运数，他会高兴一整天。对小明来说，幸运数是数中至少包含一个8，但不能有4。请编程输出1到1000中所有的幸运的数，
-//按由小到大的顺序一行一个输出。
-
-//int main()
-//{
-//	int i,tmp;
-//	for (i = 1; i <= 1000; i++)
-//	{
-//		tmp = i;
-//		int flag = 0;
-//		while (tmp)
-//		{
-//			if (tmp % 10 == 8)
-//			{
-//				flag = 1;
-//				break;
-//			}
-//			tmp /= 10;
-//		}
-//		tmp = i;
-//		while (tmp)
-//		{
-//			if (tmp % 10 == 4)
-//			{
-//				flag = 0;
-//				break;
-//			}
-//			tmp /= 10;
-//		}
-//		if (flag == 1)
-//			printf("%d\n", i);
-//	}
-//	return 0;
-//}
-
-//输入一个位数不多于9位的正整数，将其构成的数码重新组合，输出可以组合出的最小数。
-//int main()
-//{
-//	char num[10] = { 0 };
-//	int i, j;
-//	gets(num);
-//	for (i = 0; i < strlen(num) - 1; i++)
-//	{
-//		for (j = 0; j < strlen(num) - 1 - i; j++)
-//		{
-//			if (num[j] > num[j + 1])
-//			{
-//				char tmp = num[j];
-//				num[j] = num[j + 1];
-//				num[j + 1] = tmp;
-//			}
-//		}
-//	}
-//	for (i = 0; i < strlen(num); i++)
-//	{
-//		if (num[i] != '0')
-//			printf("%c", num[i]);
-//	}
-//	return 0;
-//}
-
-
-
-
-
-
-
-//10000的阶乘是一个很大的数字，但这一次我们关心的不是这个数字是多少，而是这个数字从个位开始向左直到第一个不为零的数字一共有多少个零。比如5的阶乘是120，
-//有1个零，10的阶乘是3628800，有2个零。现给你若干个数，这些数各有多少个零。
-
-
-//int main()
-//{
-//	int i,N;
-//	int tmp;
-//	scanf("%d", &N);
-//	for (i = 0; i < N; i++)
-//	{
-//		int count = 0;
-//		scanf("%d", &tmp);
-//		while (tmp)
-//		{
-//			count += (tmp / 5);
-//			tmp /= 5;
-//		}
-//		printf("%d\n", count);
-//	}
-//	return 0;
-//}
-
-
-
-
-
-
-
-
-
-
-
-//实现由键盘输入n(n<50)个点的坐标x,y(x,y<1000)，计算出最近两个点的距离。（保留三位小数）
-
-//double d(double x, double y, double m, double n) {
-//    double i, j;
-//    i = x - m;
-//    j = y - n;
-//    return i*i+j*j;
-//}
+//void shellSort(int* a, int len); // 函数声明
 //
-//int main()
+//int main(void)
 //{
-//    int j, n, m;
-//    double x[50], y[50];
-//    double ff;
-//    double min = -1;
-//    scanf("%d", &n);
-//    for (j = 0; j < n; j++)
-//        scanf("%lf%lf", &x[j], &y[j]);
-//
-//    for (j = 0; j < n - 1; j++)
-//    {
-//        for (m = j + 1; m < n; m++)
-//            if (min == -1 || d(x[j], y[j], x[m], y[m]) < min)
-//                min = d(x[j], y[j], x[m], y[m]);
+//    int i, len, * a;
+//    printf("请输入要排的数的个数：");
+//    scanf("%d", &len);
+//    a = (int*)malloc(len * sizeof(int)); // 动态定义数组
+//    printf("请输入要排的数：\n");
+//    for (i = 0; i < len; i++) { // 数组值的输入
+//        scanf("%d", &a[i]);
 //    }
-//    ff = sqrt(min);
-//    printf("%.3f", ff);
-//}
-
-
-
-
-
-
-
-
-//由键盘输入m和n，计算组合数，公式如下：
-
-//C = F(m) / (F(m - n) * F(n))
-
-//所有数字在整数范围内
-
-
-
-//int F(int x)
-//{
-//	if (x == 0) return 1;
-//	else return x * F(x - 1);
+//    shellSort(a, len); // 调用希尔排序函数
+//    printf("希尔升序排列后结果为：\n");
+//    for (i = 0; i < len; i++) { // 排序后的结果的输出
+//        printf("%d\t", a[i]);
+//    }
+//    printf("\n");
+//
+//    return 0;
 //}
 //
-//
-//int main()
+//void shellSort(int* a, int len)
 //{
-//	int m, n, C;
-//	scanf("%d%d", &m, &n);
-//	C = F(m) / (F(m - n) * F(n));
-//	printf("%d", C);
-//	return 0;
+//    int i, j, k, tmp, gap;  // gap 为步长
+//    for (gap = len / 2; gap > 0; gap /= 2) {  // 步长初始化为数组长度的一半，每次遍历后步长减半,
+//        for (i = 0; i < gap; ++i) { // 变量 i 为每次分组的第一个元素下标 
+//            for (j = i + gap; j < len; j += gap)
+//            { //对步长为gap的元素进行直插排序，当gap为1时，就是直插排序
+//                tmp = a[j];  // 备份a[j]的值
+//                k = j - gap;  // k初始化为i的前一个元素（与i相差gap长度）
+//                while (k >= 0 && a[k] > tmp) 
+//                {
+//                    a[k + gap] = a[k]; // 将在a[i]前且比tmp的值大的元素向后移动一位
+//                    k -= gap;
+//                }
+//                a[k + gap] = tmp;
+//            }
+//        }
+//    }
+//}
+
+
+
+////void ShellSort(int* arr, int size)
+////{
+//    int gap = size;
+//    while (gap > 1)
+//    {
+//        gap = gap / 3 + 1;	//调整希尔增量
+//        int i = 0;
+//        for (i = 0; i < size - gap; i++)	//从0遍历到size-gap-1
+//        {
+//            int end = i;
+//            int temp = arr[end + gap];
+//            while (end >= 0)
+//            {
+//                if (arr[end] > temp)
+//                {
+//                    arr[end + gap] = arr[end];
+//                    end -= gap;
+//                }
+//                else
+//                {
+//                    break;
+//                }
+//            }
+//            arr[end + gap] = temp;	//以 end+gap 作为插入位置
+//        }
+//    }
 //}
 
 
@@ -192,37 +171,61 @@ int main()
 
 
 
-//给定一个数N，可以计算该数所有因子(除它本身之外)的和，如12的因子和为16，现给定一个和，
-//求1～10000之间所有可得到该和的数，按由小到大，一行一个输出。
-
-//注：能整除N的数称为N的因子
 
 
-//int main()
+
+
+
+//希尔排序
+//void ShellSort(int* arr, int sz)
 //{
-//	int i,N,j;
-//	scanf("%d", &N);
-//	for (i = 1; i <= 10000; i++)
+//	int count = 0;//这是我为了看看希尔排序和直接插入排序的性能比较而设置的计数
+//	int gap = sz;//设置排序的间隔
+//	while (gap > 1)
 //	{
-//		int sum = 0;
-//		for (j = 1; j < i; j++)
+//		//这里一定要保证gap最后进来循环后为1，所以对此加1
+//		gap = gap / 3 + 1;//gap>1为与排序，gap==1，为直接插入排序
+//
+//		for (int i = 0; i < sz - gap; i++)//这里并不是一次性把一组排完，而是挨个往后，一组一个轮流排
 //		{
-//			if (i % j == 0)
-//				sum += j;
+//			int end = i;
+//			int tmp = arr[end + gap];
+//			while (end >= 0)
+//			{
+//				if (tmp < arr[end])
+//				{
+//					arr[end + gap] = arr[end];
+//					end -= gap;
+//					count++;
+//				}
+//				else
+//				{
+//					break;
+//				}
+//			}
+//			arr[end + gap] = tmp;
 //		}
-//		if (sum == N)
-//			printf("%d\n", i);
 //	}
+//	printf("希尔插入排序后移次数count=%d", count);
+//}
+//
+//void Print(int* arr, int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//		printf("%d ", arr[i]);
+//}
+//
+//void test()
+//{
+//	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
+//	int sz = sizeof(arr) / sizeof(arr[1]);
+//	ShellSort(arr, sz);
+//	printf("\n");
+//	Print(arr, sz);
+//}
+//
+//int main()
+//{
+//	test();
 //	return 0;
 //}
-
-
-
-
-
-
-
-
-
-
-
