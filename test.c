@@ -1,231 +1,338 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+//神经病版本hello world
+//#define _________ }
+//#define ________ putchar
+//#define _______ main
+//#define _(a) ________(a);
+//#define ______ _______(){
+//#define __ ______ _(0x48)_(0x65)_(0x6C)_(0x6C)
+//#define ___ _(0x6F)_(0x2C)_(0x20)_(0x77)_(0x6F)
+//#define ____ _(0x72)_(0x6C)_(0x64)_(0x21)
+//#define _____ __ ___ ____ _________
+//#include<stdio.h>
+//_____
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <malloc.h>
+//#include<stdio.h>
+//main() {
+//    int x = 0, y[14], * z = &y; *(z++) = 0x48; *(z++) = y[x++] + 0x1D;
+//    *(z++) = y[x++] + 0x07; *(z++) = y[x++] + 0x00; *(z++) = y[x++] + 0x03;
+//    *(z++) = y[x++] - 0x43; *(z++) = y[x++] - 0x0C; *(z++) = y[x++] + 0x57;
+//    *(z++) = y[x++] - 0x08; *(z++) = y[x++] + 0x03; *(z++) = y[x++] - 0x06;
+//    *(z++) = y[x++] - 0x08; *(z++) = y[x++] - 0x43; *(z++) = y[x] - 0x21;
+//    x = *(--z); while (y[x] != NULL)putchar(y[x++]);
+//}
 
-//寄存器>cache-高速缓存>内存>硬盘
-
-//连续性好--效率高--方便内存释放
-//柔性数组--至少要有一个非柔性数组成员
-//struct S
+//#include<stdio.h>
+//#define __(a) goto a;
+//#define ___(a) putchar(a);
+//#define _(a,b) ___(a) __(b);
+//main()
 //{
-//	int n;
-//	int arr[];//未知大小-柔性数组成员-数组的大小是可以调整的
-//};
-//
-//int main()
-//{
-//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5 * sizeof(int));
-//	ps->n = 100;
-//
-//	int i = 0;
-//	for (i = 0; i < 5; i++)
-//	{
-//		ps->arr[i] = i;//0 1 2 3 4
-//	}
-//	struct S* ptr = realloc(ps, 44);
-//	if (ptr != NULL)
-//	{
-//		ps = ptr;
-//	}
-//	for (i = 5; i < 10; i++)
-//	{
-//		ps->arr[i] = i;
-//	}
-//	for (i = 0; i < 10; i++)
-//	{
-//		printf("%d ", ps->arr[i]);
-//	}
-//	return 0;
+//_:__(t)a : _('r', g)b : _('$', p)
+//c : _('l', f)d : _(' ', s)e : _('a', s)
+//f : _('o', q)g : _('l', h)h : _('d', n)
+//i : _('e', w)j : _('e', x)k : _('\n', z)
+//l : _('H', l)m : _('X', i)n : _('!', k)
+//o : _('z', q)p : _('q', b)q : _(',', d)
+//r : _('i', l)s : _('w', v)t : _('H', j)
+//u : _('a', a)v : _('o', a)w : _(')', k)
+//x : _('l', c)y : _('\t', g)z : ___(0x0)
 //}
 
 
+//int n[] = { 0x48,
+//0x65,0x6C,0x6C,
+//0x6F,0x2C,0x20,
+//0x77,0x6F,0x72,
+//0x6C,0x64,0x21,
+//0x0A,0x00 }, * m = n;
+//main(n) {
+//    putchar
+//    (*m) != '\0' ? main
+//    (m++) : exit(n++);
+//}
+//#include <stdio.h>
+//main() {
+//    int i, n[] = { (((1 << 1) << (1 << 1) << (1 <<
+//1) << (1 << (1 >> 1))) + ((1 << 1) << (1 << 1))), (((1
+//<< 1) << (1 << 1) << (1 << 1) << (1 << 1)) - ((1 << 1) << (
+//1 << 1) << (1 << 1)) + ((1 << 1) << (1 << (1 >> 1))) + (1
+//<< (1 >> 1))),(((1 << 1) << (1 << 1) << (1 << 1) << (1
+//<< 1)) - ((1 << 1) << (1 << 1) << (1 << (1 >> 1))) - ((1
+//<< 1) << (1 << (1 >> 1)))),(((1 << 1) << (1 << 1) << (1
+//<< 1) << (1 << 1)) - ((1 << 1) << (1 << 1) << (1 << (1 >> 1
+//))) - ((1 << 1) << (1 << (1 >> 1)))),(((1 << 1) << (1
+//<< 1) << (1 << 1) << (1 << 1)) - ((1 << 1) << (1 << 1) << (
+//1 << (1 >> 1))) - (1 << (1 >> 1))),(((1 << 1) << (1 << 1
+//) << (1 << 1)) + ((1 << 1) << (1 << 1) << (1 << (1 >> 1)))
+//- ((1 << 1) << (1 << (1 >> 1)))),((1 << 1) << (1 << 1)
+//<< (1 << 1)),(((1 << 1) << (1 << 1) << (1 << 1) << (1 <<
+//1)) - ((1 << 1) << (1 << 1)) - (1 << (1 >> 1))),(((1 <<
+//1) << (1 << 1) << (1 << 1) << (1 << 1)) - ((1 << 1) << (1
+//<< 1) << (1 << (1 >> 1))) - (1 << (1 >> 1))), (((1 << 1
+//) << (1 << 1) << (1 << 1) << (1 << 1)) - ((1 << 1) << (1
+//<< 1) << (1 << (1 >> 1))) + (1 << 1)), (((1 << 1) << (
+//1 << 1) << (1 << 1) << (1 << 1)) - ((1 << 1) << (1 << 1)
+//<< (1 << (1 >> 1))) - ((1 << 1) << (1 << (1 >> 1)))),
+//(((1 << 1) << (1 << 1) << (1 << 1) << (1 << 1)) - ((1
+//<< 1) << (1 << 1) << (1 << 1)) + ((1 << 1) << (1 << (1 >>
+//1)))), (((1 << 1) << (1 << 1) << (1 << 1)) + (1 << (1
+//>> 1))),(((1 << 1) << (1 << 1)) + ((1 << 1) << (1 << (
+//1 >> 1))) + (1 << (1 >> 1))) }; for (i = (1 >> 1); i
+//    < (((1 << 1) << (1 << 1)) + ((1 << 1) << (1 << (1 >> 1
+//        ))) + (1 << 1)); i++) printf("%c", n[i]);
+//}
 
-//动态内存开辟---形式上更复杂---需要free多次才能清理干净---malloc多造成内存碎片
-struct S
-{
-	int n;
-	int* arr;
-};
+//C++
+//#include <stdio.h>
+//#define _(_) putchar(_);
+//int main(void) {
+//    int i = 0; _(
+//        ++++++++++++++++++++++++++++
+//        ++++++++++++++++++++++++++++
+//        ++++++++++++++++++++++++++++
+//        ++++++++++++++++++++++++++++
+//        ++++++++++++++++++++++++++++
+//        ++++i)_(++++++++++++++++++++
+//            ++++++++++++++++++++++++++++
+//            ++++++++++i)_(++++++++++++++
+//                i)_(--++i)_(++++++i)_(------
+//                    ----------------------------
+//                    ----------------------------
+//                    ----------------------------
+//                    ----------------------------
+//                    ----------------i)_(--------
+//                        ----------------i)_(++++++++
+//                            ++++++++++++++++++++++++++++
+//                            ++++++++++++++++++++++++++++
+//                            ++++++++++++++++++++++++++++
+//                            ++++++++++++++++++++++++++++
+//                            ++++++++++++++++++++++++++++
+//                            ++++++++++++++++++++++++++i)
+//        _(----------------i)_(++++++
+//            i)_(------------i)_(--------
+//                --------i)_(----------------
+//                    ----------------------------
+//                    ----------------------------
+//                    ----------------------------
+//                    ----------------------------
+//                    ------i)_(------------------
+//                        ----------------------------
+//                        i)return i;
+//}
+
+
+//#include <stdio.h>
+//#include <math.h>
+//
+//int main()
+//{
+//	int i, k,j,n;
+//	scanf("%d", &n);
+//	for (i = -n; i <= n; i++)
+//	{
+//		for (j = abs(i); j > 0; j--)
+//			printf(" ");
+//		for (k = (2 * n + 1) - 2 * abs(i); k > 0; k--)
+//			printf("*");
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//#include <stdio.h>
+////找素数
+//void primes(int cap)
+//{
+//    int i, j, composite;
+//
+//    for (i = 2; i < cap; ++i) {
+//        composite = 0;
+//        for (j = 2; j * j < i; ++j) {
+//            composite += !(i % j);
+//        }
+//        if (!composite) {
+//            printf("%dt", i);
+//        }
+//    }
+//}
+
+//int main()
+//{
+//    primes(100);
+//}
+
+//void primes(int cap)
+//{
+//    int i, j, composite, t = 0;
+//
+//    while (t < cap * cap) {
+//        i = t / cap;
+//        j = t++ % cap;
+//        if (i <= 1);
+//        else if (!j)
+//            composite = j;
+//        else if (j == i && !composite)
+//            printf("%dt", i);
+//        else if (j > 1 && j < i)
+//            composite += !(i % j);
+//    }
+//}
+//
+//int main()
+//{
+//    primes(100);
+//}
+
+//void primes(int cap, int t, int composite)
+//{
+//    int i, j;
+//    i = t / cap;
+//    j = t % cap;
+//    if (i <= 1)
+//        primes(cap, t + 1, composite);
+//    else if (!j)
+//        primes(cap, t + 1, j);
+//    else if (j == i && !composite)
+//        (printf("%dt", i), primes(cap, t + 1, composite));
+//    else if (j > 1 && j < i)
+//        primes(cap, t + 1, composite + !(i % j));
+//    else if (t < cap * cap)
+//        primes(cap, t + 1, composite);
+//}
+//
+//int main()
+//{
+//    primes(100, 0, 0);
+//}
+
+//void primes(int m, int t, int c)
+//{
+//    int i, j;
+//    i = t / m;
+//    j = t % m;
+//    (i <= 1) ? primes(m, t + 1, c) : (!j) ? primes(m, t + 1, j) : (j == i && !c) ?
+//        (printf("%dt", i), primes(m, t + 1, c)) : (j > 1 && j < i) ?
+//        primes(m, t + 1, c + !(i % j)) : (t < m * m) ? primes(m, t + 1, c) : 0;
+//}
+//
+//int main()
+//{
+//    primes(100, 0, 0);
+//}
+// 
+//void primes(int m, int t, int c)
+//{
+//    ((t / m) <= 1) ? primes(m, t + 1, c) : !(t % m) ? primes(m, t + 1, t % m) :
+//        ((t % m) == (t / m) && !c) ? (printf("%dt", (t / m)), primes(m, t + 1, c)) :
+//        ((t % m) > 1 && (t % m) < (t / m)) ? primes(m, t + 1, c + !((t / m) % (t % m))) :
+//        (t < m * m) ? primes(m, t + 1, c) : 0;
+//}
+//
+//int main()
+//{
+//    primes(100, 0, 0);
+//}
+//
+//void _(int __, int ___, int ____)
+//{
+//    ((___ / __) <= 1) ? _(__, ___ + 1, ____) : !(___ % __) ? _(__, ___ + 1, ___ % __) :
+//        ((___ % __) == (___ / __) && !____) ? (printf("%dt", (___ / __)),
+//            _(__, ___ + 1, ____)) : ((___ % __) > 1 && (___ % __) < (___ / __)) ?
+//        _(__, ___ + 1, ____ + !((___ / __) % (___ % __))) : (___ < __ * __) ?
+//        _(__, ___ + 1, ____) : 0;
+//}
+//
+//int main()
+//{
+//    _(100, 0, 0);
+//}
+//void _(int __, int ___, int ____, int _____)
+//{
+//    ((___ / __) <= _____) ? _(__, ___ + _____, ____, _____) : !(___ % __) ? _(__, ___ + _____, ___ % __, _____) :
+//        ((___ % __) == (___ / __) && !____) ? (printf("%dt", (___ / __)),
+//            _(__, ___ + _____, ____, _____)) : ((___ % __) > _____ && (___ % __) < (___ / __)) ?
+//        _(__, ___ + _____, ____, _____ + !((___ / __) % (___ % __))) : (___ < __ * __) ?
+//        _(__, ___ + _____, ____, _____) : 0;
+//}
+//
+//int main() {
+//    _(100, 0, 0, 1);
+//}
+
+#include <stdio.h>
+#include <string.h>
+//int main()
+//{
+//	FILE* pf = fopen("case1.in", "w");
+//	fprintf(pf, "%s\n%s\n%s", "hello","bye", "yes");
+//
+//	fclose(pf);
+//	pf = NULL;
+//	FILE* pf = fopen("case1.in", "r");
+//	if (pf == NULL) return 0;
+//	char word[10000][11] = { 0 };
+//	int i = 0,j,count;
+//	while (fgets(word[i],11, pf) != NULL)
+//	{
+//		i++;
+//		count = i;
+//	}
+//	for (i = 0; i < count-1; i++)
+//	{
+//		for (j = 0; j < count -1- i; j++)
+//		{
+//			if (strcmp(word[j], word[j + 1]) > 0)
+//			{
+//				char tmp[11] = { 0 };
+//				strcpy(tmp, word[j]);
+//				strcpy(word[j], word[j + 1]);
+//				strcpy(word[j + 1], tmp);
+//			}
+//		}
+//	}
+//	pf = fopen("answer.txt", "w");
+//	for (i = 0; i < count; i++)
+//	{
+//		fputs(word[i], pf);
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+// 
+// 
+// 
+// 
+//在当前目录有文件“case1.in”，文件里存放有多个（总个数不超过10000个）英文单词（每个英文单词不会超过10个字文字符）， 每行一个，单词未排序。现要求，
+// 将文件中的所有单词按字典顺序排序，然后将排序好的单词写入新建的文件answer.txt中（注：文件存放于当前目录）。
+//  请完成程序，实现该功能，（注意，填空题，请不要使用return 0结束，否则会影响评判而判错）
 
 int main()
 {
-	struct S* ps = (struct S*)malloc(sizeof(struct S));
-	ps->arr = malloc(5 * sizeof(int));
-
-	int i;
-	for (i = 0; i < 5; i++)
+	char ch[10000][11], a[11];
+	FILE* fp, * fp1;
+	int i, j, n = 0;
+	if ((fp = fopen("case1.in", "r")) == NULL)
+		return 0;
+	if ((fp1 = fopen("answer.txt", "w")) == NULL)
+		return 0;
+	while ((fscanf(fp, "%s", ch[n])) > 0) n++;
+	for (i = 0; i < n - 1; i++)
 	{
-		ps->arr[i] = i;
+		for (j = 0; j < n - i - 1; j++)
+		{
+			if (strcmp(ch[j], ch[j + 1]) > 0)
+			{
+				strcpy(a, ch[j]);
+				strcpy(ch[j], ch[j + 1]);
+				strcpy(ch[j + 1], a);
+			}
+		}
 	}
-	for (i = 0; i < 5; i++)
-	{
-		printf("%d ", ps->arr[i]);
-	}
-	//调整大小
-	int* ptr = realloc(ps->arr, 10 * sizeof(int));
-	if (ptr != NULL)
-	{
-		ps->arr = ptr;
-	}
-	for (i = 5; i < 10; i++)
-	{
-		ps->arr[i] = i;
-	}
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", ps->arr[i]);
-	}
+	for (i = 0; i < n; i++)
+		fprintf(fp1, "%s\n", ch[i]);
+	fclose(fp);
+	fclose(fp1);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//void shellSort(int* a, int len); // 函数声明
-//
-//int main(void)
-//{
-//    int i, len, * a;
-//    printf("请输入要排的数的个数：");
-//    scanf("%d", &len);
-//    a = (int*)malloc(len * sizeof(int)); // 动态定义数组
-//    printf("请输入要排的数：\n");
-//    for (i = 0; i < len; i++) { // 数组值的输入
-//        scanf("%d", &a[i]);
-//    }
-//    shellSort(a, len); // 调用希尔排序函数
-//    printf("希尔升序排列后结果为：\n");
-//    for (i = 0; i < len; i++) { // 排序后的结果的输出
-//        printf("%d\t", a[i]);
-//    }
-//    printf("\n");
-//
-//    return 0;
-//}
-//
-//void shellSort(int* a, int len)
-//{
-//    int i, j, k, tmp, gap;  // gap 为步长
-//    for (gap = len / 2; gap > 0; gap /= 2) {  // 步长初始化为数组长度的一半，每次遍历后步长减半,
-//        for (i = 0; i < gap; ++i) { // 变量 i 为每次分组的第一个元素下标 
-//            for (j = i + gap; j < len; j += gap)
-//            { //对步长为gap的元素进行直插排序，当gap为1时，就是直插排序
-//                tmp = a[j];  // 备份a[j]的值
-//                k = j - gap;  // k初始化为i的前一个元素（与i相差gap长度）
-//                while (k >= 0 && a[k] > tmp) 
-//                {
-//                    a[k + gap] = a[k]; // 将在a[i]前且比tmp的值大的元素向后移动一位
-//                    k -= gap;
-//                }
-//                a[k + gap] = tmp;
-//            }
-//        }
-//    }
-//}
-
-
-
-////void ShellSort(int* arr, int size)
-////{
-//    int gap = size;
-//    while (gap > 1)
-//    {
-//        gap = gap / 3 + 1;	//调整希尔增量
-//        int i = 0;
-//        for (i = 0; i < size - gap; i++)	//从0遍历到size-gap-1
-//        {
-//            int end = i;
-//            int temp = arr[end + gap];
-//            while (end >= 0)
-//            {
-//                if (arr[end] > temp)
-//                {
-//                    arr[end + gap] = arr[end];
-//                    end -= gap;
-//                }
-//                else
-//                {
-//                    break;
-//                }
-//            }
-//            arr[end + gap] = temp;	//以 end+gap 作为插入位置
-//        }
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-//希尔排序
-//void ShellSort(int* arr, int sz)
-//{
-//	int count = 0;//这是我为了看看希尔排序和直接插入排序的性能比较而设置的计数
-//	int gap = sz;//设置排序的间隔
-//	while (gap > 1)
-//	{
-//		//这里一定要保证gap最后进来循环后为1，所以对此加1
-//		gap = gap / 3 + 1;//gap>1为与排序，gap==1，为直接插入排序
-//
-//		for (int i = 0; i < sz - gap; i++)//这里并不是一次性把一组排完，而是挨个往后，一组一个轮流排
-//		{
-//			int end = i;
-//			int tmp = arr[end + gap];
-//			while (end >= 0)
-//			{
-//				if (tmp < arr[end])
-//				{
-//					arr[end + gap] = arr[end];
-//					end -= gap;
-//					count++;
-//				}
-//				else
-//				{
-//					break;
-//				}
-//			}
-//			arr[end + gap] = tmp;
-//		}
-//	}
-//	printf("希尔插入排序后移次数count=%d", count);
-//}
-//
-//void Print(int* arr, int sz)
-//{
-//	for (int i = 0; i < sz; i++)
-//		printf("%d ", arr[i]);
-//}
-//
-//void test()
-//{
-//	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
-//	int sz = sizeof(arr) / sizeof(arr[1]);
-//	ShellSort(arr, sz);
-//	printf("\n");
-//	Print(arr, sz);
-//}
-//
-//int main()
-//{
-//	test();
-//	return 0;
-//}
