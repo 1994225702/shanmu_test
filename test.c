@@ -1,126 +1,46 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-//5  电影《长津湖》
-//Time Limit : 1000MS  Memory Limit : 65535K
-//题型 : 编程题   语言 : 不限定
-//描述
-//2021年国庆大卖电影《长津湖》以长津湖战役为背景，讲述了一个志愿军连队在极度严酷环境下坚守阵地奋勇杀敌，为长津湖战役胜利作出重要贡献的感人故事。
-//一天，光明村也上影《长津湖》了，大家都去电影院买票。假设票价是50元整，去买票的人都是现金支付，且每人要么只带一张50元大钞，
-//要么只带一张100元大钞。小村里的电影院只有一个买票窗口，并且开始卖票时，没有准备任何找零的钱（这意味着先收一张50元大钞，才能给下一位
-//持100元大钞的买主找零）。
-//在电影票开卖前，村民都自觉的排成一列，问，现在有n位手持50元大钞的村民和m位手持100元大钞的村民，问有多少种不同的排队方式，、
-//使得在整个卖票过程中，电影院不会出现无钱找零的情况。
-//
-//注：只要有任意两个人的先后顺序不同，整个队列就是不同的排队方式
-//
-//输入格式
-//两个正整数，以空格分隔，分别是n和m（0
-//
-//输出格式
-//不同的排队方式，如果无任何一种成立的排队方式，则输出0
-//
-//输入样例
-//2 2
-//
-//输出样例
-//8
-//
-//提示
-//使用递归方法求解
 
-//#include <stdio.h>
-//int m1, n1;
-//int cnt = 0;//统计不同的排队方式数量
-//void ListAll(int m, int n, int nn, int all)//ListAll函数用于尝试不同的排队方式，已找出满足条件的排队方式数量
-//{
-//	//m表示剩余手持100元的人数
-//	//n表示剩余手持50元的人数
-//	//nn表示当前可用50元的大钞数量
-//	//all表示当前排队的人数
-//
-//	//注意，为什么要用全局变量m1,n1来保存数据，因为在递归过程m,n值会改变
-//	//而且需要判断all==m1+n1，所以m1,n1值不能改变
-//
-//	//如果满足all==m1+n1说明找到了一种满足条件的排队方式，cnt++;
-//	if (all == m1 + n1)
-//	{
-//		cnt++; 
-//		return;
-//	}
-//	if (n > 0)
-//	{
-//		int a=n-1;
-//		int b=nn+1;
-//		ListAll(m, a,b,all+1);
-//	}
-//	if (nn > 0 && m > 0)
-//	{
-//		int c=nn-1;
-//		int d = m - 1;
-//		ListAll(d, n, c, all+1);
-//	}
-//	//递归穷举所有可能的排队方式
-//}
-////计算阶乘
-//int fac(int n)
-//{
-//	int a = 1;
-//	for (int i = n; i > 0; i--)
-//	{
-//		a *= i;
-//	}
-//	return a;
-//}
-//int main()
-//{
-//	
-//	scanf("%d%d", &n1, &m1);
-//	if (m1 > n1 || n1 == 0)
-//	{
-//		printf("0");
-//		return 0;
-//	}
-//	ListAll(m1, n1, 0, 0);
-//	printf("%d", cnt * fac(m1) * fac(n1));
-//	return 0;
-//}
+#include "SeqList.h"
 
+void TestSeqList1()
+{
+	SL s1;
+	SeqListInit(&s1);
+	SeqListPushBack(&s1, 5);
+	SeqListPushBack(&s1, 2);
+	SeqListPushBack(&s1, 6);
+	SeqListPushBack(&s1, 8);
+	SeqListPushBack(&s1, 7);
+	
 
+	SeqListPrint(&s1);
 
+	SeqListPopBack(&s1);
+	SeqListPrint(&s1);
+	SeqListPopBack(&s1);
+
+	SeqListPrint(&s1);
+	SeqListPushFront(&s1, 10);
+	SeqListPushFront(&s1, 10);
+	SeqListPushFront(&s1, 10);
+	SeqListPushFront(&s1, 10);
+	SeqListPushFront(&s1, 10);
+	SeqListPushFront(&s1, 10);
+	SeqListPrint(&s1);
+
+	SeqListPopBack(&s1);
+	SeqListPrint(&s1);
+
+	SeqListPopFront(&s1);
+	SeqListPopFront(&s1);
+	SeqListPopFront(&s1);
+	SeqListPrint(&s1);
+
+}
 int main()
 {
-	int i, j, m = 0, x, y, n, a[20][20] = { 0 },cnt=1;
-	scanf("%d", &n);
-	for (i = -(n - 1); i <= (n - 1); i++)
-	{
-		for (j = 0; j < n - abs(i); j++)
-		{
-			if (m < n)
-			{
-				x = m - j;
-			}
-			else x = n - 1 - j;
-			y = m - x;
-			if (m % 2 == 0)
-				a[x][y] = cnt++;
-			else
-				a[y][x] = cnt++;
-		}
-		m++;
-	}
-	for (i = 0; i < n; i++)
-	{
-		for (j = 0; j < n; j++)
-			printf("%4d", a[i][j]);
-		printf("\n");
-	}
+	TestSeqList1();
 	return 0;
 }
-
-
-
-
