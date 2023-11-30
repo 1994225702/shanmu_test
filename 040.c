@@ -8,7 +8,7 @@
 
 void main()
 {
-	int i,k=0;
+	int i, k = 0;
 	int ip[4] = { 0 };
 	char tmp[33];
 	printf("输入:");
@@ -18,17 +18,10 @@ void main()
 	{
 		for (int j = i; j < i + 8; j++)
 		{
-			ip[k] = ip[k] * 2 + tmp[j]-'0';
+			ip[k] = ip[k] * 2 + tmp[j] - '0';
 		}
 		k++;
 	}
 	printf("IP 地址:");
 	printf("%d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3]);
 }
-
-
-
-
-
-
-
