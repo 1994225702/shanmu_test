@@ -35,27 +35,37 @@ Description
 
 int main()
 {
-	int n, i, j;
-	scanf("%d", &n);
-	int* Dinsert = (int*)malloc(sizeof(int) * n);
-	for (i = 0; i < n; i++)
-		scanf("%d", Dinsert + i);
-	for (i = 0; i < n - 1; i++)
-	{
-		int end = i;
-		int tmp = Dinsert[end + 1];
-		while (end >= 0 && tmp < Dinsert[end])
-		{
-			Dinsert[end + 1] = Dinsert[end];
-			end--;
-		}
-		Dinsert[end + 1] = tmp;
-		for (j = 0; j < n; j++)
-			printf("%d ", Dinsert[j]);
-		printf("\n");
-	}
+
 	return 0;
 }
+
+
+
+
+
+//int main()
+//{
+//	int n, i, j;
+//	scanf("%d", &n);
+//	int* Dinsert = (int*)malloc(sizeof(int) * n);
+//	for (i = 0; i < n; i++)
+//		scanf("%d", Dinsert + i);
+//	for (i = 0; i < n - 1; i++)
+//	{
+//		int end = i;
+//		int tmp = Dinsert[end + 1];
+//		while (end >= 0 && tmp < Dinsert[end])
+//		{
+//			Dinsert[end + 1] = Dinsert[end];
+//			end--;
+//		}
+//		Dinsert[end + 1] = tmp;
+//		for (j = 0; j < n; j++)
+//			printf("%d ", Dinsert[j]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
 //int main()
 //{
 //	int n, i, j;
